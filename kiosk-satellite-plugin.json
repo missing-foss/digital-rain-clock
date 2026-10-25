@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "id": "digital-rain-clock",
+  "name": "Digital Rain Clock",
+  "version": "0.1.0",
+  "apiVersion": 1,
+  "minAndroidSdk": 24,
+  "entryClass": "org.missing_foss.digitalrainclock.DigitalRainClockPlugin",
+  "description": "A falling-glyph screensaver: columns of katakana and digits rain down a black screen, and the current time forms out of the rain.",
+  "author": "missing-foss",
+  "license": "Apache-2.0",
+  "capabilities": [
+    "screensaver"
+  ],
+  "icon": "icon.png",
+  "settings": [
+    {
+      "key": "time",
+      "type": "select",
+      "title": "Time",
+      "default": "Formed in the rain",
+      "options": [
+        "Formed in the rain",
+        "Rain only"
+      ],
+      "group": "Clock",
+      "description": "The current time forms out of the rain, or the rain falls alone."
+    },
+    {
+      "key": "colour",
+      "type": "select",
+      "title": "Colour",
+      "default": "Green",
+      "options": [
+        "Green",
+        "Amber",
+        "Ice",
+        "Custom"
+      ],
+      "group": "Clock"
+    },
+    {
+      "key": "customColour",
+      "type": "color",
+      "title": "Custom colour",
+      "default": "#3DDC84",
+      "group": "Clock",
+      "visibleWhen": {
+        "key": "colour",
+        "equals": "Custom"
+      }
+    },
+    {
+      "key": "speed",
+      "type": "select",
+      "title": "Speed",
+      "default": "Normal",
+      "options": [
+        "Calm",
+        "Normal",
+        "Fast"
+      ],
+      "group": "Clock"
+    },
+    {
+      "key": "glyphs",
+      "type": "select",
+      "title": "Glyphs",
+      "default": "Katakana and digits",
+      "options": [
+        "Katakana and digits",
+        "Digits only"
+      ],
+      "group": "Clock",
+      "description": "Digits only also applies by itself on a device whose fonts lack the katakana."
+    },
+    {
+      "key": "clock",
+      "type": "select",
+      "title": "Clock",
+      "default": "24-hour",
+      "options": [
+        "24-hour",
+        "12-hour"
+      ],
+      "group": "Clock"
+    },
+    {
+      "key": "drift",
+      "type": "boolean",
+      "title": "Slow drift",
+      "default": true,
+      "group": "Clock",
+      "description": "Moves the time by a cell each minute, so it never sits on the same spot for long."
+    }
+  ],
+  "groups": [
+    {
+      "title": "Clock"
+    }
+  ]
+}
